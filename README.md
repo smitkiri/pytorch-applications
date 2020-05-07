@@ -1,13 +1,34 @@
 # PyTorch Applications
 ---
-This repository contains the datasets I worked on while learning PyTorch. The notebooks have deep learning implementations using pytorch along with a discription of the techniques used. The notebooks in this repository are the following 
+This repository contains the datasets I worked on while learning PyTorch. The notebooks have deep learning implementations using pytorch along with a discription of the techniques used. The notebooks in this repository are the following:
 
-##### CIFAR10
+#### 1. CIFAR10
 This dataset contains 60,000 images from 10 classes split into 50,000 training images and 10,000 test images. The images are colored with 32x32 dimensions. The modelling involves training a convolutional neural network with cross-entropy loss and Adam optimizer. The results are as follows:
+
 |          | Training Set | Test Set |
 |----------|--------------|----------|
 | Loss     | 0.2397       | 1.1309   |
 | Accuracy | 93.75%       | 66.51%   |
+
+#### 2. Sonar
+
+This dataset is used to discriminate between sonar signals bounced off a metal cylinder and those bounced off a roughly cylindrical rock. Each sonar pattern is a set of 60 numbers in the range 0.0 to 1.0.  Each number represents the energy within a particular frequency band, integrated over a certain period of time.
+
+For this binary classification problem, I first tried using Logistic Regression (Just a single Neuron with sigmoid activation). The results were as follows:
+
+| Logistic Regression | Training Set | Test Set |
+|----------|--------------|----------|
+| Loss     | 0.1627       | 0.1579   |
+| Accuracy | 80.14%       | 82.26%   |
+
+Then, I tried using a simple feed-forward neural network with 2 hidden layers (with 64 and 16 neurons respectively) to see if I get better results. 
+
+| Neural Network | Training Set | Test Set |
+|----------|--------------|----------|
+| Loss     | 0.1896       | 0.4643   |
+| Accuracy | 100.00%      | 82.26%   |
+
+The model most probably overfit, as we can see 100% accuracy on training set and only 82% accuracy on test set.
 
 ## PyTorch
 
